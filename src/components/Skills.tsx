@@ -1,75 +1,100 @@
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
-import { Code, Brain, Shield, Database, Cloud, Zap } from "lucide-react";
+import { Code, Layers, Database, Cloud, Zap, Terminal } from "lucide-react";
 
 const skillCategories = [
   {
     title: "Programming Languages",
     icon: Code,
     skills: [
-      { name: "Python", level: 95, description: "Advanced ML/AI development" },
-      { name: "C++", level: 85, description: "Systems programming & optimization" },
-      { name: "C", level: 80, description: "Low-level programming" },
-      { name: "JavaScript", level: 75, description: "Full-stack development" },
+      { name: "C/C++", level: 50, description: "Systems programming & DSA" },
+      { name: "Java", level: 10, description: "Object-oriented programming, DSA, & enterprise apps" },
+      { name: "Python", level: 50, description: "AI/ML, data science, backend development & scripting" },
+      { name: "JavaScript/TypeScript", level: 10, description: "Full-stack web development" },
     ],
     color: "primary"
   },
   {
-    title: "Machine Learning & AI",
-    icon: Brain,
+    title: "Frontend Development",
+    icon: Layers,
     skills: [
-      { name: "Deep Learning", level: 90, description: "Neural networks, CNNs, RNNs" },
-      { name: "NLP", level: 85, description: "Language models, transformers" },
-      { name: "Computer Vision", level: 80, description: "Image processing, recognition" },
-      { name: "MLOps", level: 75, description: "Model deployment & monitoring" },
+      { name: "React.js", level: 10, description: "Component-based UI development" },
+      { name: "Next.js", level: 10, description: "Server-side rendering & SSG" },
+      { name: "Bootstrap & TailwindCSS", level: 10, description: "Utility-first CSS framework" },
+      { name: "HTML5 & CSS3", level: 50, description: "Modern web standards" },
     ],
     color: "accent"
   },
   {
-    title: "Frameworks & Tools",
+    title: "Backend & Databases",
     icon: Database,
     skills: [
-      { name: "TensorFlow", level: 90, description: "Production ML models" },
-      { name: "PyTorch", level: 85, description: "Research & prototyping" },
-      { name: "Scikit-learn", level: 80, description: "Classical ML algorithms" },
-      { name: "Docker", level: 75, description: "Containerization" },
+      { name: "Node.js & Express", level: 10, description: "Backend frameworks" },
+      { name: "REST / JSON", level: 10, description: "Application Programming Interfaces" },
+      { name: "PostgreSQL", level: 25, description: "Relational database management" },
+      { name: "MongoDB", level: 10, description: "NoSQL database" },
+      { name: "Firebase / Redis / InfluxDB / Cassandra / Neo4j", level: 15, description: "Some other NoSQL databases" },
     ],
     color: "secondary"
   },
   {
-    title: "Cybersecurity",
-    icon: Shield,
+    title: "DevOps & Cloud",
+    icon: Cloud,
     skills: [
-      { name: "Network Security", level: 70, description: "Security protocols & analysis" },
-      { name: "Penetration Testing", level: 65, description: "Vulnerability assessment" },
-      { name: "Cryptography", level: 68, description: "Encryption & security" },
-      { name: "AI Security", level: 72, description: "ML model security" },
+      { name: "Docker & Kubernetes", level: 10, description: "Containerization & Orchestration" },
+      { name: "AWS", level: 10, description: "Cloud infrastructure & services" },
+      { name: "CI/CD Pipelines", level: 10, description: "Automated deployment workflows" },
+      { name: "Terraform", level: 10, description: "Infrastructure as Code" },
+      { name: "Git & GitHub", level: 50, description: "Version control and Collaboraton" },
     ],
     color: "neural"
-  }
+  },
+  {
+    title: "Cross-Platform Development",
+    icon: Zap,
+    skills: [
+      { name: "React-Native", level: 10, description: "Mobile cross-platform" },
+      { name: "Electron", level: 10, description: "Desktop web apps" },
+      { name: "Flutter", level: 20, description: "Mobile and desktop cross-platform" },
+      { name: "Django", level: 10, description: "Python web framework" },
+    ],
+    color: "accent"
+  },
+  {
+    title: "Data Structures & Algorithms",
+    icon: Terminal,
+    skills: [
+      { name: "Arrays & Strings", level: 50, description: "Linear data structures" },
+      { name: "Trees & Graphs", level: 10, description: "Non-linear data structures" },
+      { name: "Dynamic Programming", level: 10, description: "Optimization techniques" },
+      { name: "Algorithm Analysis", level: 10, description: "Time & space complexity" },
+    ],
+    color: "primary"
+  },
+  
 ];
 
 const achievements = [
   {
+    icon: Code,
+    title: "Full-Stack Developer",
+    description: "Building production-ready web applications"
+  },
+  {
+    icon: Terminal,
+    title: "Algorithm Expert",
+    description: "Strong foundation in DSA across multiple languages"
+  },
+  {
+    icon: Layers,
+    title: "Polyglot Programmer",
+    description: "Proficient in C/C++, Java, Python, JavaScript"
+  },
+  {
     icon: Cloud,
-    title: "IBM Certified ML Professional",
-    description: "Advanced machine learning certification from IBM"
-  },
-  {
-    icon: Shield,
-    title: "Coursera Cybersecurity",
-    description: "Comprehensive cybersecurity specialization"
-  },
-  {
-    icon: Brain,
-    title: "Udemy Advanced ML",
-    description: "Advanced machine learning course completion"
-  },
-  {
-    icon: Zap,
-    title: "AI Innovation Award",
-    description: "Recognition for innovative AI solutions"
+    title: "Cloud Enthusiast",
+    description: "Learning AWS & modern DevOps practices"
   }
 ];
 
@@ -82,7 +107,7 @@ export function Skills() {
             Skills & <span className="text-gradient">Expertise</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A comprehensive toolkit for building next-generation AI solutions.
+            A comprehensive toolkit for building scalable, efficient, and modern software solutions.
           </p>
         </div>
 
@@ -116,10 +141,10 @@ export function Skills() {
           ))}
         </div>
 
-        {/* Certifications & Awards */}
+        {/* Focus Areas */}
         <div>
           <h3 className="text-2xl font-bold text-center mb-8">
-            Certifications & <span className="text-gradient">Awards</span>
+            Current <span className="text-gradient">Focus Areas</span>
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
@@ -142,9 +167,20 @@ export function Skills() {
           <h3 className="text-xl font-semibold mb-6">Technology Stack</h3>
           <div className="flex flex-wrap justify-center gap-2">
             {[
-              "Python", "TensorFlow", "PyTorch", "OpenAI", "Hugging Face", 
-              "AWS", "Docker", "Kubernetes", "Git", "Linux", "MongoDB", 
-              "PostgreSQL", "React", "Node.js", "FastAPI"
+              // Programming Languages
+              "C/C++", "Java", "Python", "JavaScript", "TypeScript",
+              // Frontend
+              "React", "Next.js", "Astro", "HTML5", "CSS3", "TailwindCSS", "Bootstrap", "Sass",
+              // Backend
+              "Node.js", "Express.js", "Django",
+              // Databases
+              "PostgreSQL", "MongoDB", "Redis",
+              // DevOps & Cloud
+              "Docker", "Kubernetes", "AWS", "Terraform", "CI/CD", "Ansible", "Nginx", "Kafka", "ElasticSearch",
+              // Tools
+              "Git", "GitHub", "JetBrains IDEs", "Windows", "Linux",
+              // Other
+              "RESTful APIs", "Webpack",  "npm", "Vite", "esbuild", "ESLint", "Prettier"
             ].map((tech, index) => (
               <Badge 
                 key={index} 
@@ -155,6 +191,17 @@ export function Skills() {
               </Badge>
             ))}
           </div>
+        </div>
+
+        {/* Learning Roadmap Note */}
+        <div className="mt-12 text-center">
+          <Card className="bg-glass p-6 border-0 shadow-glass max-w-3xl mx-auto">
+            <p className="text-muted-foreground">
+              <span className="font-semibold text-primary">Currently Learning:</span> Advanced System Design, 
+              Microservices Architecture, AI/ML Fundamentals, Essentials of Data Science, and Cloud-Native Development. 
+              Following structured roadmaps for Full-Stack Development and Polyglot Programming with DSA.
+            </p>
+          </Card>
         </div>
       </div>
     </section>

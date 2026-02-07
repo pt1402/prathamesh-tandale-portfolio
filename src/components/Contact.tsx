@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, Phone, Linkedin, Github, Heart, Send } from "lucide-react";
+import { Mail, Phone, Linkedin, Github, Heart, Send, Loader2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from '@emailjs/browser';
 
 export function Contact() {
-  const [likes, setLikes] = useState(247);
+  const [likes, setLikes] = useState(0);
   const [hasLiked, setHasLiked] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isLiking, setIsLiking] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -17,24 +20,109 @@ export function Contact() {
   });
   const { toast } = useToast();
 
-  const handleLike = () => {
-    if (!hasLiked) {
-      setLikes(prev => prev + 1);
+  // API base URL - use environment variable or default to production
+  const API_URL = import.meta.env.VITE_API_URL || '';
+
+  // Load global likes count from API
+  useEffect(() => {
+    const fetchLikes = async () => {
+      try {
+        const response = await fetch(`${API_URL}/api/likes`);
+        const data = await response.json();
+        setLikes(data.likes);
+      } catch (error) {
+        console.error('Error fetching likes:', error);
+      }
+    };
+
+    fetchLikes();
+
+    // Check if user has already liked
+    const userHasLiked = localStorage.getItem('user_has_liked');
+    if (userHasLiked === 'true') {
       setHasLiked(true);
-      toast({
-        title: "Thank you!",
-        description: "Your appreciation means a lot to me! 🎉",
-      });
+    }
+
+    // Optional: Poll for updates every 30 seconds
+    const interval = setInterval(fetchLikes, 30000);
+    return () => clearInterval(interval);
+  }, [API_URL]);
+
+  const handleLike = async () => {
+    if (!hasLiked && !isLiking) {
+      setIsLiking(true);
+      
+      try {
+        const response = await fetch(`${API_URL}/api/like`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to increment likes');
+        }
+
+        const data = await response.json();
+        setLikes(data.likes);
+        setHasLiked(true);
+        localStorage.setItem('user_has_liked', 'true');
+        
+        toast({
+          title: "Thank you!",
+          description: "Your appreciation means a lot to me! 🎉",
+        });
+      } catch (error) {
+        console.error('Error liking:', error);
+        toast({
+          title: "Error",
+          description: "Failed to register your like. Please try again.",
+          variant: "destructive",
+        });
+      } finally {
+        setIsLiking(false);
+      }
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you soon!",
-    });
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const result = await emailjs.send(
+        'service_2bkqrh3',
+        'template_9hg2uzs',
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: 'Prathamesh',
+        },
+        '9F5q2h7rNKXy4yIBY'
+      );
+
+      console.log('SUCCESS!', result.text);
+      
+      toast({
+        title: "Message Sent! ✅",
+        description: "Thank you for reaching out. I'll get back to you soon!",
+      });
+      
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch (error) {
+      console.error('FAILED...', error);
+      
+      toast({
+        title: "Error ❌",
+        description: "Failed to send message. Please try again or email me directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -79,7 +167,7 @@ export function Contact() {
             Get In <span className="text-gradient">Touch</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Let's collaborate on the next breakthrough in AI. I'm always excited to discuss innovative projects and opportunities.
+            Let's collaborate on the next breakthrough. I'm always excited to discuss innovative projects and opportunities.
           </p>
         </div>
 
@@ -98,6 +186,7 @@ export function Contact() {
                     placeholder="Your Name"
                     className="bg-muted/20 border-border/20 focus:border-primary transition-colors"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -110,6 +199,7 @@ export function Contact() {
                     placeholder="your.email@example.com"
                     className="bg-muted/20 border-border/20 focus:border-primary transition-colors"
                     required
+                    disabled={isSubmitting}
                   />
                 </div>
               </div>
@@ -122,6 +212,7 @@ export function Contact() {
                   placeholder="What's this about?"
                   className="bg-muted/20 border-border/20 focus:border-primary transition-colors"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <div>
@@ -134,14 +225,25 @@ export function Contact() {
                   rows={5}
                   className="bg-muted/20 border-border/20 focus:border-primary transition-colors resize-none"
                   required
+                  disabled={isSubmitting}
                 />
               </div>
               <Button 
                 type="submit" 
                 className="w-full bg-gradient-primary hover:shadow-primary transition-all duration-300"
+                disabled={isSubmitting}
               >
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
+                {isSubmitting ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : (
+                  <>
+                    <Send className="mr-2 h-4 w-4" />
+                    Send Message
+                  </>
+                )}
               </Button>
             </form>
           </Card>
@@ -180,15 +282,24 @@ export function Contact() {
               </p>
               <Button
                 onClick={handleLike}
-                disabled={hasLiked}
+                disabled={hasLiked || isLiking}
                 className={`${
                   hasLiked 
                     ? "bg-gradient-accent" 
                     : "bg-gradient-primary hover:shadow-primary"
                 } transition-all duration-300 transform hover:scale-105`}
               >
-                <Heart className={`mr-2 h-4 w-4 ${hasLiked ? "fill-current" : ""}`} />
-                {hasLiked ? "Loved!" : "Like"} ({likes})
+                {isLiking ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Liking...
+                  </>
+                ) : (
+                  <>
+                    <Heart className={`mr-2 h-4 w-4 ${hasLiked ? "fill-current" : ""}`} />
+                    {hasLiked ? "Loved!" : "Like"} ({likes})
+                  </>
+                )}
               </Button>
               <div className="mt-4 text-sm text-muted-foreground">
                 Thank you for visiting! Your support motivates me to keep innovating.
