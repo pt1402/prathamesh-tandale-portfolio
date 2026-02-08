@@ -26,7 +26,7 @@ export function Hero() {
       });
     }
   };
-  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  return <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 pt-20 md:pt-0">
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-bg">
         <div className="absolute inset-0 opacity-30">
