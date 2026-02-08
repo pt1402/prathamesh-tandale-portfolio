@@ -16,7 +16,7 @@ export function Footer() {
           
           <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
             <Coffee className="h-4 w-4" />
-            <span>Powered by AI Innovation & Endless Curiosity</span>
+            <span>Powered by Passion and Endless Curiosity</span>
           </div>
           
           <div className="text-sm text-muted-foreground">
