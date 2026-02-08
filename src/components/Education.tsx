@@ -48,54 +48,54 @@ const educationData = [
 
 const certifications = [
   {
-    name: "IBM Certified Machine Learning Professional",
-    url: "https://www.credly.com/badges/your-certificate-id" // Replace with your actual certificate URL
+    name: "Certificate Link Placeholder-01",
+    url: "https://drive.google.com/file/d/1zP8KLmzwqj5gVADHbcyVFyY8AkmvCndp/view?usp=drive_link" // Replace with your actual certificate URL
   },
   {
-    name: "Cybersecurity Specialization - Coursera",
-    url: "https://coursera.org/verify/your-certificate-id"
+    name: "Certificate Link Placeholder-02",
+    url: "https://drive.google.com/file/d/1zP8KLmzwqj5gVADHbcyVFyY8AkmvCndp/view?usp=drive_link" // Replace with your actual certificate URL
   },
   {
-    name: "Advanced Machine Learning - Udemy",
-    url: "https://udemy.com/certificate/your-certificate-id"
+    name: "Certificate Link Placeholder-03",
+    url: "https://drive.google.com/file/d/1zP8KLmzwqj5gVADHbcyVFyY8AkmvCndp/view?usp=drive_link" // Replace with your actual certificate URL
   },
   {
-    name: "Deep Learning Specialization",
-    url: "https://coursera.org/verify/your-certificate-id"
+    name: "Certificate Link Placeholder-04",
+    url: "https://drive.google.com/file/d/1zP8KLmzwqj5gVADHbcyVFyY8AkmvCndp/view?usp=drive_link" // Replace with your actual certificate URL
   },
   {
-    name: "AI Ethics and Governance",
-    url: "https://example.com/certificate"
+    name: "Certificate Link Placeholder-05",
+    url: "https://drive.google.com/file/d/1zP8KLmzwqj5gVADHbcyVFyY8AkmvCndp/view?usp=drive_link" // Replace with your actual certificate URL
   },
   {
-    name: "Cloud AI Architecture",
-    url: "https://example.com/certificate"
-  }
+    name: "Certificate Link Placeholder-06",
+    url: "https://drive.google.com/file/d/1zP8KLmzwqj5gVADHbcyVFyY8AkmvCndp/view?usp=drive_link" // Replace with your actual certificate URL
+  },
 ];
 
 const codingProfiles = [
   {
     platform: "CodeChef",
-    username: "your-username",
-    url: "https://www.codechef.com/users/your-username",
+    username: "pt1402",
+    url: "https://www.codechef.com/users/pt1402",
     logo: "https://cdn.codechef.com/images/cc-logo.svg",
-    stats: "4★ Rating",
+    stats: "0★ Rating",
     color: "from-amber-900 to-orange-400"
   },
   {
     platform: "GeeksforGeeks",
-    username: "your-username",
-    url: "https://auth.geeksforgeeks.org/user/your-username",
+    username: "prathameshtandale",
+    url: "https://www.geeksforgeeks.org/profile/prathameshtandale?tab=activity",
     logo: "https://media.geeksforgeeks.org/wp-content/uploads/20200716222246/Path-219.png",
-    stats: "300+ Problems Solved",
+    stats: "0+ Problems Solved",
     color: "from-green-500 to-emerald-500"
   },
   {
     platform: "LeetCode",
-    username: "your-username", // Replace with your username
-    url: "https://leetcode.com/your-username",
+    username: "prathameshtandale", // Replace with your username
+    url: "https://leetcode.com/u/prathameshtandale/",
     logo: "https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png",
-    stats: "500+ Problems Solved",
+    stats: "0+ Problems Solved",
     color: "from-orange-500 to-yellow-500"
   },
 ];

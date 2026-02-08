@@ -74,29 +74,29 @@ const achievements = [
 
 const recognitions = [
   {
-    name: "Dean's List Recognition",
-    url: "https://example.com/deans-list-certificate.pdf"
+    name: "Certificate Link Placeholder-01",
+    url: "https://drive.google.com/file/d/1LVJtyU2mlUgWQgEfAASXYJEk3C4jvpbp/view?usp=drive_link"
   },
   {
-    name: "AI Innovation Excellence Award",
-    url: "https://example.com/ai-innovation-award.pdf"
+    name: "Certificate Link Placeholder-02",
+    url: "https://drive.google.com/file/d/1LVJtyU2mlUgWQgEfAASXYJEk3C4jvpbp/view?usp=drive_link"
   },
   {
-    name: "Best Research Project Award",
-    url: "https://example.com/research-award.pdf"
+    name: "Certificate Link Placeholder-03",
+    url: "https://drive.google.com/file/d/1LVJtyU2mlUgWQgEfAASXYJEk3C4jvpbp/view?usp=drive_link"
   },
   {
-    name: "Outstanding Intern Recognition",
-    url: "https://example.com/intern-recognition.pdf"
+    name: "Certificate Link Placeholder-04",
+    url: "https://drive.google.com/file/d/1LVJtyU2mlUgWQgEfAASXYJEk3C4jvpbp/view?usp=drive_link"
   },
   {
-    name: "Technical Leadership Award",
-    url: "https://example.com/leadership-award.pdf"
+    name: "Certificate Link Placeholder-05",
+    url: "https://drive.google.com/file/d/1LVJtyU2mlUgWQgEfAASXYJEk3C4jvpbp/view?usp=drive_link"
   },
   {
-    name: "Community Contribution Award",
-    url: "https://example.com/community-award.pdf"
-  }
+    name: "Certificate Link Placeholder-06",
+    url: "https://drive.google.com/file/d/1LVJtyU2mlUgWQgEfAASXYJEk3C4jvpbp/view?usp=drive_link"
+  },
 ];
 
 export function Achievements() {

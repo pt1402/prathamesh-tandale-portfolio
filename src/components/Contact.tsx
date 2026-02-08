@@ -222,7 +222,7 @@ export function Contact() {
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Tell me about your project or opportunity..."
-                  rows={5}
+                  rows={15}
                   className="bg-muted/20 border-border/20 focus:border-primary transition-colors resize-none"
                   required
                   disabled={isSubmitting}

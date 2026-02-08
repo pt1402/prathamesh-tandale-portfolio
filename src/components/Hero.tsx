@@ -94,7 +94,7 @@ export function Hero() {
                 <Mail className="mr-2 h-4 w-4" />
                 Get In Touch
               </Button>
-              <Button variant="outline" className="bg-glass hover:bg-primary/10 hover:text-primary transition-smooth">
+              <Button variant="outline" className="bg-glass hover:bg-primary/10 hover:text-primary transition-smooth" onClick={() => window.open("https://drive.google.com/file/d/1ugqUxfI2kbdFdUQrI5-kUhNiz6Zasfbg/view?usp=drive_link", "_blank")}>
                 <Download className="mr-2 h-4 w-4" />
                 Download Resume
               </Button>
