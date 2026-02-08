@@ -1,11 +1,6 @@
 import { kv } from '@vercel/kv';
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-) {
-  // Enable CORS
+export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -19,7 +14,7 @@ export default async function handler(
   }
 
   try {
-    const likes = await kv.get<number>('portfolio:likes') || 0;
+    const likes = await kv.get('portfolio:likes') || 0;
     return res.status(200).json({ likes });
   } catch (error) {
     console.error('Error fetching likes:', error);

@@ -1,11 +1,6 @@
 import { kv } from '@vercel/kv';
-import type { VercelRequest, VercelResponse } from '@vercel/node';
 
-export default async function handler(
-  req: VercelRequest,
-  res: VercelResponse
-) {
-  // Enable CORS
+export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -19,7 +14,6 @@ export default async function handler(
   }
 
   try {
-    // Atomic increment to prevent race conditions
     const newLikes = await kv.incr('portfolio:likes');
     return res.status(200).json({ likes: newLikes });
   } catch (error) {
