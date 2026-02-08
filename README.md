@@ -50,11 +50,11 @@ git push origin main
 This project is open source and available under the MIT License.
 
 ### 👨‍💻 Author
-Prathamesh Tandale
-Portfolio: https://prathamesh-tandale-portfolio.vercel.app
-GitHub: @pt1402
-LinkedIn: prathamesh-tandale
-Email: prathameshtandale724@gmail.com
+- Prathamesh Tandale
+- Portfolio: https://prathamesh-tandale-portfolio.vercel.app
+- GitHub: @pt1402
+- LinkedIn: prathamesh-tandale
+- Email: prathameshtandale724@gmail.com
 
 ### 🙏 Acknowledgments
 - React
