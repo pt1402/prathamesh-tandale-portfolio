@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# 🚀 Prathamesh Tandale - Portfolio Website
 
-## Project info
+A modern, responsive portfolio website built with React, TypeScript, and TailwindCSS. Showcasing my skills, projects, and experience as a Full-Stack Developer.
 
-**URL**: https://lovable.dev/projects/47c7f7be-200c-4737-be02-3b06c99dc58b
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://your-project-name.vercel.app)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.0+-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
 
-## How can I edit this code?
+## 🌟 Features
 
-There are several ways of editing your application.
+- **Responsive Design** - Fully optimized for desktop, tablet, and mobile devices
+- **Modern UI/UX** - Clean, professional interface with smooth animations
+- **Functional Contact Form** - Integrated with EmailJS for real-time message delivery
+- **Interactive Like Counter** - Engage with visitors
+- **Coding Profiles** - Direct links to LeetCode, GeeksforGeeks, and CodeChef
+- **Education Timeline** - Visual representation of academic journey
+- **Skills Showcase** - Dynamic skill bars with proficiency levels
+- **Auto-Deploy** - Continuous deployment via Vercel + GitHub integration
+- **SEO Optimized** - Meta tags and semantic HTML for better discoverability
 
-**Use Lovable**
+## 🛠️ Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/47c7f7be-200c-4737-be02-3b06c99dc58b) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
+### Frontend
+- React 18+
 - TypeScript
+- Vite
+- TailwindCSS
+- shadcn/ui
+- Lucide React
+
+### Backend & Services
+- EmailJS
+- Vercel Serverless Functions
+- Vercel KV (optional)
+
+### Development Tools
+- ESLint
+- Git & GitHub
+- Vercel
+
+### Deployment
+This project is configured for automatic deployment to Vercel. Simply push to the main branch and Vercel will handle the rest.
+git add .
+git commit -m "Update portfolio"
+git push origin main
+
+### 📝 License
+This project is open source and available under the MIT License.
+
+### 👨‍💻 Author
+Prathamesh Tandale
+Portfolio: https://prathamesh-tandale-portfolio.vercel.app
+GitHub: @pt1402
+LinkedIn: prathamesh-tandale
+Email: prathameshtandale724@gmail.com
+
+### 🙏 Acknowledgments
 - React
-- shadcn-ui
-- Tailwind CSS
+- Vite
+- TailwindCSS
+- shadcn/ui
+- Lucide Icons
+- EmailJS
+- Vercel
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/47c7f7be-200c-4737-be02-3b06c99dc58b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Made with ❤️ by Prathamesh Tandale
