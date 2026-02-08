@@ -52,8 +52,8 @@ This project is open source and available under the MIT License.
 ### 👨‍💻 Author
 - Prathamesh Tandale
 - Portfolio: https://prathamesh-tandale-portfolio.vercel.app
-- GitHub: @pt1402
-- LinkedIn: prathamesh-tandale
+- GitHub: https://github.com/pt1402
+- LinkedIn: https://linkedin.com/in/prathamesh-tandale
 - Email: prathameshtandale724@gmail.com
 
 ### 🙏 Acknowledgments
